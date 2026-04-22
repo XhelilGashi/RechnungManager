@@ -1,0 +1,6 @@
+{
+  "name": "RechnungManager",
+  "description": "Desktop-first web application for managing invoices and offers in German.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

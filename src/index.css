@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-white: var(--color-white);
+  --color-slate-50: var(--color-slate-50);
+  --color-slate-100: var(--color-slate-100);
+  --color-slate-200: var(--color-slate-200);
+  --color-slate-300: var(--color-slate-300);
+  --color-slate-400: var(--color-slate-400);
+  --color-slate-500: var(--color-slate-500);
+  --color-slate-600: var(--color-slate-600);
+  --color-slate-700: var(--color-slate-700);
+  --color-slate-800: var(--color-slate-800);
+  --color-slate-900: var(--color-slate-900);
+
+  --color-sidebar: var(--color-sidebar);
+  --color-card: var(--color-card);
+  --color-border: var(--color-border);
+}
+
+:root {
+  --color-white: #ffffff;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  
+  --color-sidebar: rgba(255, 255, 255, 0.7);
+  --color-card: rgba(255, 255, 255, 0.75);
+  --color-border: rgba(0, 0, 0, 0.08);
+  
+  --bg-color: #f1f5f9;
+  --body-text: #1e293b;
+  --bg-gradient: radial-gradient(at 0% 0%, hsla(253,16%,7%,0) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,0.02) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,0) 0, transparent 50%);
+}
+
+:root.dark {
+  --color-white: #1e293b; 
+  --color-slate-50: #0f172a; 
+  --color-slate-100: #020617; 
+  --color-slate-200: #334155; 
+  --color-slate-300: #475569; 
+  --color-slate-400: #64748b; 
+  --color-slate-500: #94a3b8; 
+  --color-slate-600: #cbd5e1; 
+  --color-slate-700: #e2e8f0; 
+  --color-slate-800: #f1f5f9; 
+  --color-slate-900: #f8fafc; 
+  
+  --color-sidebar: rgba(15, 23, 42, 0.85);
+  --color-card: rgba(15, 23, 42, 0.85);
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  --bg-color: #020617;
+  --body-text: #f1f5f9;
+  --bg-gradient: radial-gradient(at 0% 0%, hsla(253,16%,15%,0.2) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,10%,0.3) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,10%,0.2) 0, transparent 50%);
+}
+
+body {
+  background: var(--bg-gradient);
+  background-color: var(--bg-color);
+  color: var(--body-text);
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Reset background to solid white for print */
+  body {
+     background: white;
+  }
+
+  .invoice-print-area, .invoice-print-area * {
+    visibility: visible;
+  }
+
+  .invoice-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  /* Hide the React-RND resize handles when printing */
+  .react-draggable {
+    border: none !important;
+  }
+  .invoice-print-area [class*="opacity-0"] {
+    display: none !important;
+  }
+}
